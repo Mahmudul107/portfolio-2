@@ -48,7 +48,7 @@ const Header = () => {
       <div className="navbar">
         <div className="navbar-start">
           <Link>
-            <h2 className="font-[Cinzel] text-6xl text-lime-400">M</h2>
+            <h2 className="font-[Cinzel] text-6xl text-lime-400 underline">M</h2>
           </Link>
         </div>
         <div className="navbar-end hidden lg:flex">

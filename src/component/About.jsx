@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Lottie from "lottie-react";
 import coding from "../assets/coding.json";
 import { Link } from "react-router-dom";
 import { FaDownload } from "react-icons/fa";
+import "aos/dist/aos.css";
+import AOS from "aos";
 
 const About = () => {
+
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
     <div>
       <div className="border-b-2 border-dashed border-gray-600 my-4 w-96 mx-auto"></div>
@@ -13,7 +19,7 @@ const About = () => {
       </h2>
       <div className="border-b-2 border-dashed border-gray-600 my-4 w-96 mx-auto"></div>
       <div className="card lg:card-side mx-auto lg:flex-row-reverse justify-center gap-32">
-        <div className="mt-8">
+        <div className="mt-8" data-aos="fade-down-right" data-aos-duration="1000">
           <figure className="">
             <Lottie
               animationData={coding}
@@ -30,7 +36,7 @@ const About = () => {
             </span>
           </Link>
         </div>
-        <div className="w-full md:w-2/5 mt-8 md:mt-20">
+        <div className="w-full md:w-2/5 mt-8 md:mt-20" data-aos="fade-down-left" data-aos-duration="1000">
           <p className="text-gray-300 font-sans text-base md:text-lg">
             A MERN stack web developer crafts stunning and dynamic portfolio
             websites. Combining MongoDB, Express.js, React, and Node.js, they
@@ -52,7 +58,7 @@ const About = () => {
               <p className="text-white text-base md:text-lg">Address</p>
               <h2 className="text-gray-300 mb-4">1205-Dhaka, Bangladesh</h2>
             </div>
-            <div className="border border-gray-600 my-4 md:my-0"></div>
+            <div className="border border-gray-500 my-4 md:my-0"></div>
             <div>
               <p className="text-white text-base md:text-lg">Education</p>
               <h2 className="text-gray-300 mb-4">

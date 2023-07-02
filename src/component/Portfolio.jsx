@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FaDownload } from "react-icons/fa";
+import { FaEye } from "react-icons/fa";
 import cover from "../assets/mahmudul-rembg.png";
 import Typewriter from "typewriter-effect";
 
@@ -9,7 +9,7 @@ const Portfolio = () => {
     <div>
       <div className="hero min-h-screen">
         <div className="hero-content flex-col gap-12 lg:flex-row-reverse">
-          <div className="bg-lime-500 w-[380px] h-[400px] rounded-full hover:scale-90 transition-transform hover:translate-x-4 duration-700">
+          <div className="bg-gray-300 w-[380px] h-[400px] rounded-full hover:scale-90 transition-transform hover:translate-x-4 duration-700">
             <div className="">
               <img
                 className="flex justify-center rounded-full w-[380px] h-[436px] -mt-9"
@@ -34,6 +34,7 @@ const Portfolio = () => {
                       "a MERN Stack Web Developer.",
                       "a Frontend Developer.",
                       "a Web Developer.",
+                      "a Software Engineer"
                     ],
                     autoStart: true,
                     loop: true,
@@ -51,7 +52,7 @@ const Portfolio = () => {
                 <span className="flex items-center gap-2 justify-center relative w-full text-left text-black transition-colors duration-300 ease-in-out group-hover:text-hidden">
                   View Resume{" "}
                   <span class="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full group-hover:translate-x-0 ease">
-                    <FaDownload />
+                    <FaEye />
                   </span>
                 </span>
               </Link>

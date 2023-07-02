@@ -1,0 +1,35 @@
+[
+    {
+      "name": "HTML",
+      "image": "https://i.ibb.co/zF2CJsh/html-5.png"
+    },
+    {
+      "name": "CSS",
+      "image": "https://i.ibb.co/qCjJQ6M/css.png"
+    },
+    {
+      "name": "JavaScript",
+      "image": "https://i.ibb.co/8NxhJpH/java-script.png"
+    },
+    {
+      "name": "React.js",
+      "image": "https://i.ibb.co/SchRp0K/react.png"
+    },
+    {
+      "name": "Firebase",
+      "image": "https://i.ibb.co/rxdfNc6/firebase.png"
+    },
+    {
+      "name": "Node.js",
+      "image": "https://i.ibb.co/BVjRhDF/node.png"
+    },
+    {
+      "name": "Express.js",
+      "image": "https://i.ibb.co/xssqbYT/express.png"
+    },
+    {
+      "name": "MongoDB",
+      "image": "https://i.ibb.co/nCcn31r/mongodb.png"
+    }
+  ]
+  
