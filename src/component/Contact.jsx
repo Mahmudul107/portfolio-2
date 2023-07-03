@@ -26,7 +26,7 @@ const Contact = () => {
   }, []);
 
   return (
-    <div className="mx-auto px-4 sm:px-8 md:px-12 lg:px-16 mt-10" id="contact">
+    <div className="mx-auto px-4 sm:px-8 md:px-12 lg:px-16 mt-36" id="contact">
       <div className="border-b-2 border-dashed border-gray-600 my-4 w-40 sm:w-96 mx-auto"></div>
       <figure className="h-40">
         <Lottie
