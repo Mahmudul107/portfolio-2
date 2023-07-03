@@ -1,44 +1,52 @@
 import React from "react";
 import { AiOutlineMenu } from "react-icons/ai";
+import { FaDownload } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { Link as ScrollLink } from 'react-scroll';
 
 const Header = () => {
   const navItems = (
     <>
       <li>
-        <Link className={({ isActive }) => (isActive ? "active" : "default")}>
+        <ScrollLink to="#" smooth={true} duration={1000}>
           Home
-        </Link>
+        </ScrollLink>
       </li>
       <li>
-        <Link className={({ isActive }) => (isActive ? "active" : "default")}>
+        <ScrollLink to="portfolio" smooth={true} duration={1000}>
           Portfolio
-        </Link>
+        </ScrollLink>
       </li>
       <li>
-        <Link className={({ isActive }) => (isActive ? "active" : "default")}>
+        <ScrollLink to="aboutMe" smooth={true} duration={1000}>
           About Me
-        </Link>
+        </ScrollLink>
       </li>
       <li>
-        <Link className={({ isActive }) => (isActive ? "active" : "default")}>
+        <ScrollLink to="skills" smooth={true} duration={1000}>
           Skills
-        </Link>
+        </ScrollLink>
       </li>
       <li>
-        <Link className={({ isActive }) => (isActive ? "active" : "default")}>
+        <ScrollLink to="projects" smooth={true} duration={1000}>
+          Project
+        </ScrollLink>
+      </li>
+      <li>
+        <ScrollLink to="contact" smooth={true} duration={1000}>
           Contact
-        </Link>
+        </ScrollLink>
       </li>
       <li>
-        <Link className={({ isActive }) => (isActive ? "active" : "default")}>
-          Blogs
-        </Link>
-      </li>
-      <li>
-        <Link className={({ isActive }) => (isActive ? "active" : "default")}>
-          Download Resume
-        </Link>
+        <a className="relative inline-flex items-center justify-start px-6 py-3 overflow-hidden font-medium transition-all rounded hover:bg-white group">
+          <span className="w-48 h-48 rounded rotate-[-40deg] bg-lime-600 absolute bottom-0 left-0 -translate-x-full ease-out duration-1000 transition-all translate-y-full mb-9 ml-9 group-hover:ml-0 group-hover:mb-32 group-hover:translate-x-0"></span>
+          <span className="flex items-center gap-2 justify-center relative w-full text-left text-white transition-colors duration-1000 ease-in-out group-hover:text-hidden group-hover:text-white">
+            Download Resume{" "}
+            <span className="absolute inset-0 flex items-center justify-center w-full h-full duration-700 -translate-x-full group-hover:translate-x-0 ease">
+              <FaDownload/>
+            </span>
+          </span>
+        </a>
       </li>
     </>
   );
@@ -48,7 +56,9 @@ const Header = () => {
       <div className="navbar">
         <div className="navbar-start">
           <Link>
-            <h2 className="font-[Cinzel] text-6xl text-lime-400 underline">M</h2>
+            <h2 className="font-[Cinzel] text-6xl text-lime-400 underline">
+              M
+            </h2>
           </Link>
         </div>
         <div className="navbar-end hidden lg:flex">
@@ -58,7 +68,7 @@ const Header = () => {
         </div>
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
-            <AiOutlineMenu className="text-white ml-36"/>
+            <AiOutlineMenu className="text-white ml-36" />
           </label>
           <ul
             tabIndex={0}
