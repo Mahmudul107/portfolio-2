@@ -18,3 +18,6 @@ https://wickedblocks.dev/
 https://uicolors.app/create
 
 https://favicon.io/
+
+## React Scramble Text -
+https://github.com/cettoana/react-scramble?tab=readme-ov-file
