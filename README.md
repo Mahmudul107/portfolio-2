@@ -21,3 +21,6 @@ https://favicon.io/
 
 ## React Scramble Text -
 https://github.com/cettoana/react-scramble?tab=readme-ov-file
+
+### React Sooner -toastify
+https://sonner.emilkowal.ski/
