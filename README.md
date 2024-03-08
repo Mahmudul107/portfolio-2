@@ -24,3 +24,6 @@ https://github.com/cettoana/react-scramble?tab=readme-ov-file
 
 ### React Sooner -toastify
 https://sonner.emilkowal.ski/
+
+### Animated form
+https://www.visme.co/templates/forms-surveys/
