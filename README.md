@@ -19,6 +19,8 @@ https://uicolors.app/create
 
 https://favicon.io/
 
+#### All in one for Ui: https://uiverse.io/
+
 ## React Scramble Text -
 https://github.com/cettoana/react-scramble?tab=readme-ov-file
 
