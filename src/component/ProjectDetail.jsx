@@ -40,7 +40,7 @@ const ProjectDetail = () => {
 
       {/* Description Section */}
       <div data-aos="fade-up" data-aos-duration="1400" className="mb-8">
-        <p className="text-lg text-white">{project.description}</p>
+        <p className="text-lg text-white text-justify">{project.description}</p>
       </div>
 
       {/* Button Section */}

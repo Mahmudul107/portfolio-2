@@ -21,11 +21,14 @@ const Project = () => {
 
   return (
     <div id="projects" className="px-4 sm:px-6 lg:px-20 text-[#e2e8f0]">
-      <div className="border-b-2 border-dashed border-gray-600 my-4 w-96 mx-auto"></div>
-      <h2 className="text-lime-500 text-center text-2xl lg:text-6xl font-semibold font-cinzel">
+      <h2 className="text-lime-500 text-center text-4xl lg:text-6xl font-semibold font-cinzel">
         <i>My Projects</i>
       </h2>
-      <div className="border-b-2 border-dashed border-gray-600 my-4 w-96 mx-auto mb-20"></div>
+      <div className="mt-4 mb-20 flex items-center justify-center">
+        <span className="inline-block w-56 h-1 bg-[#84cc16] rounded-full"></span>
+        <span className="inline-block w-7 h-1 ml-1 bg-[#84cc16] rounded-full"></span>
+        <span className="inline-block w-1 h-1 ml-1 bg-[#84cc16] rounded-full"></span>
+      </div>
 
       <div className="grid grid-cols-1 gap-10 lg:gap-12">
         {projects.map((project, index) => (

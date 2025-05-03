@@ -12,12 +12,15 @@ const About = () => {
   }, []);
 
   return (
-    <div id="aboutMe" className=" text-[#e2e8f0] py-20 px-4">
-      <div className="border-b-2 border-dashed border-[#06b6d4] my-4 w-96 mx-auto"></div>
-      <h2 className="text-[#84cc16] text-center sm:text-2xl lg:text-6xl md:text-6xl font-semibold font-[cinzel]">
+    <div id="about" className=" text-[#e2e8f0] py-20 px-4">
+      <h2 className="text-[#84cc16] text-center text-4xl sm:text-2xl lg:text-6xl md:text-6xl font-semibold font-[cinzel]">
         <i>About Me</i>
       </h2>
-      <div className="border-b-2 border-dashed border-[#06b6d4] my-4 w-96 mx-auto"></div>
+      <div className="mt-2 mb-20 flex items-center justify-center">
+        <span className="inline-block w-40 h-1 bg-[#84cc16] rounded-full"></span>
+        <span className="inline-block w-3 h-1 ml-1 bg-[#84cc16] rounded-full"></span>
+        <span className="inline-block w-1 h-1 ml-1 bg-[#84cc16] rounded-full"></span>
+      </div>
       <div className="card lg:card-side mx-auto lg:flex-row-reverse justify-center gap-32">
         <div
           className="mt-8"
@@ -64,7 +67,9 @@ const About = () => {
               <p className="text-[#e2e8f0] text-base md:text-lg">Name</p>
               <h2 className="text-[#e2e8f0] mb-4">Mahmudul Islam</h2>
               <p className="text-[#e2e8f0] text-base md:text-lg">Email</p>
-              <h2 className="text-[#e2e8f0] mb-4">mahmudulislam378@gmail.com</h2>
+              <h2 className="text-[#e2e8f0] mb-4">
+                mahmudulislam378@gmail.com
+              </h2>
               <p className="text-[#e2e8f0] text-base md:text-lg">Phone</p>
               <h2 className="text-[#e2e8f0] mb-4">+8801868697940</h2>
               <p className="text-[#e2e8f0] text-base md:text-lg">Address</p>

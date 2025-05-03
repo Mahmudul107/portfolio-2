@@ -24,14 +24,15 @@ const Skills = () => {
 
   return (
     <div className="my-40" id="skills">
-      {/* Divider line */}
-      <div className="border-b-2 border-dashed border-[#06b6d4] my-4 w-96 mx-auto"></div>
-      <h2 className="text-[#84cc16] text-center sm:text-2xl lg:text-6xl md:text-6xl font-semibold font-[cinzel]">
+      <h2 className="text-[#84cc16] text-center text-4xl sm:text-2xl lg:text-6xl md:text-6xl font-semibold font-[cinzel]">
         <i>Skills</i>
       </h2>
-      <div className="border-b-2 border-dashed border-[#06b6d4] my-4 w-96 mx-auto mb-16"></div>
+      <div className="mt-2 mb-20 flex items-center justify-center">
+        <span className="inline-block w-40 h-1 bg-[#84cc16] rounded-full"></span>
+        <span className="inline-block w-3 h-1 ml-1 bg-[#84cc16] rounded-full"></span>
+        <span className="inline-block w-1 h-1 ml-1 bg-[#84cc16] rounded-full"></span>
+      </div>
 
-      {/* Grid layout for skills */}
       <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 mt-10 justify-center items-center px-36">
         {skills.map((skill, index) => (
           <div
@@ -40,7 +41,6 @@ const Skills = () => {
             data-aos={getRandomAnimation()}
             data-aos-duration="1000"
           >
-            {/* Skill Image */}
             <div className="h-14 flex justify-center items-center mb-4">
               <img
                 src={skill.image}
@@ -49,7 +49,6 @@ const Skills = () => {
               />
             </div>
 
-            {/* Skill Name */}
             <h2 className="text-lg font-[cinzel] text-[#e2e8f0] mt-4 font-semibold">{skill.name}</h2>
           </div>
         ))}

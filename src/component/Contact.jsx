@@ -8,9 +8,8 @@ const ContactSection = () => {
   };
 
   return (
-    <section className="py-20 px-4 text-[#e2e8f0]">
+    <section id="contact" className="py-20 px-4 text-[#e2e8f0] mt-28">
       <div className="max-w-6xl mx-auto">
-        {/* Heading */}
         <div className="text-center mb-12">
           <h2 className="text-4xl font-extrabold text-[#84cc16]">
             Let’s Connect
@@ -21,7 +20,6 @@ const ContactSection = () => {
         </div>
 
         <div className="grid md:grid-cols-2 gap-10">
-          {/* Why Reach Out - Card */}
           <div className=" shadow-lg rounded-2xl p-6 space-y-6">
             <h3 className="text-xl font-semibold text-[#84cc16]">Why Reach Out?</h3>
 
@@ -65,8 +63,6 @@ const ContactSection = () => {
               </div>
             </div>
           </div>
-
-          {/* Contact Form - Card */}
           <div className=" shadow-lg rounded-2xl p-6">
             <h3 className="text-xl font-semibold text-[#84cc16] mb-6">Send a Message</h3>
             <form onSubmit={handleSubmit} className="space-y-5">

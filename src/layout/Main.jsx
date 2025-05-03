@@ -12,7 +12,7 @@ const Main = () => {
   }, []);
 
   return (
-    <div className="bg-gradient-to-br from-[#0f172a] via-[#082f49] to-[#1e1b4b] px-44">
+    <div className="bg-gradient-to-br from-[#0f172a] via-[#082f49] to-[#1e1b4b] px-4 sm:px-8 md:px-16 lg:px-24 xl:px-44">
       <Header />
       <div className="my-20">
         <Outlet />

@@ -17,3 +17,30 @@
 .btn-style {
   @apply relative inline-flex items-center justify-start px-6 py-2 overflow-hidden font-medium transition-all rounded hover:bg-white;
 }
+
+
+/* For active nav item underline with animation */
+.scroll-link {
+  position: relative;
+  padding-bottom: 4px;
+  transition: all 0.3s ease;
+}
+
+.scroll-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0%;
+  background-color: #84cc16; /* Tailwind lime-400 */
+  transition: width 0.3s ease-in-out;
+}
+
+.scroll-link:hover::after {
+  width: 100%;
+}
+
+.active-link::after {
+  width: 100%;
+}
