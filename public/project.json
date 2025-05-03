@@ -1,27 +1,35 @@
 [
-    {
-      "name": "Dance Verse",
-      "img": "https://i.ibb.co/KDF7dL1/dance-verse-web-app-i-Phone-12-Pro.png",
-      "serverLink": "https://github.com/Mahmudul107/dancing-school-server",
-      "clientLink": "https://github.com/Mahmudul107/dancing-school-client",
-      "liveDemo": "https://dance-verse.web.app/",
-      "description": "This is the first project. It showcases the use of advanced algorithms to solve complex problems."
-    },
-    {
-      "name": "Vroom Vroom Toys",
-      "img": "https://i.ibb.co/sbkGPfh/vroom-vroom-toys-web-app-i-Phone-SE.png",
-      "serverLink": "https://github.com/Mahmudul107/vroom-vroom-toys-server",
-      "clientLink": "https://github.com/Mahmudul107/vroom-vroom-toys-client",
-      "liveDemo": "https://vroom-vroom-toys.web.app/",
-      "description": "The second project is a web application that allows users to manage their tasks and track their progress."
-    },
-    {
-      "name": "Retro Food",
-      "img": "https://i.ibb.co/9cqbfc9/chef-recipe-hunting-web-app-i-Phone-SE.png",
-      "serverLink": "https://github.com/Mahmudul107/chef-recipe-hunter-server",
-      "clientLink": "https://github.com/Mahmudul107/chef-recipe-hunter-client",
-      "liveDemo": "https://chef-recipe-hunting.web.app/",
-      "description": "Project three is a mobile app that provides real-time weather updates and forecasts for locations worldwide."
-    }
-  ]
-  
+  {
+    "id": 1,
+    "title": "Stationery E-commerce Web App",
+    "name": "Leaf & Line",
+    "auto_img": "https://i.ibb.co.com/3mXdbzmK/leaf-and-line-netlify-app.png",
+    "detail_page_img": "https://i.ibb.co.com/VWxcbzBv/Leaf-and-Line.png",
+    "serverLink": "https://github.com/Mahmudul107/stationary-shop",
+    "clientLink": "https://github.com/Mahmudul107/stationary-shop-frontend",
+    "liveDemo": "https://leaf-and-line.netlify.app/",
+    "description": "Leaf & Line is a modern stationery shop web application designed to offer a user-friendly experience for both customers and admins. It includes secure user registration with role-based authentication, ensuring that only authorized users have access to specific features. The platform offers dynamic product filtering, allowing users to search for items based on categories, price, and availability. The detailed product pages provide all necessary information, and users can easily add items to their cart with checks to ensure that the requested quantity is available. An integrated payment gateway (ShurjoPay) enables smooth transactions. Both admins and users have personalized dashboards to manage products, orders, and customer data, while the site boasts a responsive design that ensures a seamless experience across devices. Additional features include toast notifications, loading indicators, and comprehensive error handling for a polished user experience."
+  },
+  {
+    "id": 2,
+    "title": "Used Items Marketplace Platform",
+    "name": "Adol Bodol",
+    "auto_img": "https://i.ibb.co.com/KpHYtx2K/adol-bodon-frontend-vercel-app.png",
+    "detail_page_img": "https://i.ibb.co.com/SXDvGmR6/Adol-Bodol.png",
+    "serverLink": "https://github.com/Mahmudul107/adolBodol-backend",
+    "clientLink": "https://github.com/Mahmudul107/adolBodol-frontend",
+    "liveDemo": "https://adol-bodon-frontend.vercel.app/",
+    "description": "Adol Bodol is an innovative second-hand marketplace platform where users can both buy and sell used items. The platform is designed to offer a secure, seamless experience, leveraging JWT authentication and bcrypt password hashing to ensure user security. The marketplace allows users to list items for sale with detailed descriptions, images, pricing, and conditions, and provides advanced filtering options based on category, price, condition, and location to help buyers find exactly what they’re looking for. Sellers can manage their listings, track sales and purchases, and even mark items as sold once they are no longer available. A unique wishlist feature allows users to save items for future consideration. In addition, an optional messaging system facilitates direct communication between buyers and sellers. The platform is built using modern technologies such as Next.js, TypeScript, and MongoDB, and includes a powerful admin panel (optional) for managing users and listings."
+  },
+  {
+    "id": 3,
+    "title": "Chef Recipe Showcase Platform",
+    "name": "Retro Food",
+    "auto_img": "https://i.ibb.co.com/W4PGGYX6/chef-recipe-hunting-web-app.png",
+    "detail_page_img": "https://i.ibb.co.com/HLsm3Fbx/chef-recipe-hunting-web-app-1.png",
+    "serverLink": "https://github.com/Mahmudul107/chef-recipe-hunter-server",
+    "clientLink": "https://github.com/Mahmudul107/chef-recipe-hunter-client",
+    "liveDemo": "https://chef-recipe-hunting.web.app/",
+    "description": "Retro Food is an engaging recipe showcase platform that allows users to explore a variety of recipes curated by top chefs from around the world. The site includes private routes that restrict access to detailed recipe pages unless the user is authenticated. Built with React.js and integrated with Firebase authentication, Retro Food offers a clean, responsive design optimized for all screen sizes. The application integrates dynamic data from the backend, powered by Express and Node.js, to provide real-time updates and accurate recipe details. Users can browse through an extensive collection of recipes, search based on ingredients or dish types, and save their favorite recipes for future use. The platform ensures a seamless and secure user experience while promoting culinary exploration."
+  }
+]

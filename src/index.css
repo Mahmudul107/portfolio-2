@@ -2,14 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
-.my-container{
-    @apply overflow-x-hidden px-4 py-16 ml-40 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-2xl md:px-28 lg:px-8 lg:py-20;
+.my-container {
+  @apply overflow-x-hidden px-4 py-16 ml-40 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-2xl md:px-28 lg:px-8 lg:py-20;
 }
 
 .active {
-    @apply text-white transition-colors duration-200 hover:text-blue-400;
-  }
-  
-  .default {
-    @apply text-white transition-colors duration-200 hover:text-blue-400;
-  }
+  @apply text-white transition-colors duration-200 hover:text-blue-400;
+}
+
+.default {
+  @apply text-white transition-colors duration-200 hover:text-blue-400;
+}
+
+.btn-style {
+  @apply relative inline-flex items-center justify-start px-6 py-2 overflow-hidden font-medium transition-all rounded hover:bg-white;
+}

@@ -1,50 +1,55 @@
-import React from "react";
-import { AiOutlineMenu } from "react-icons/ai";
+import React, { useState, useEffect } from "react";
+import { AiOutlineMenu, AiOutlineClose, AiOutlineBulb } from "react-icons/ai";
 import { FaDownload } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import { Link as ScrollLink } from 'react-scroll';
+import { Link as ScrollLink } from "react-scroll";
+import pdf from "../../public/MERN Stack Developer resume of Mahmudul Islam.pdf";
 
 const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [darkMode, setDarkMode] = useState(true);
+
+  useEffect(() => {
+    document.body.classList.toggle("dark", darkMode);
+  }, [darkMode]);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  const toggleDarkMode = () => {
+    setDarkMode((prev) => !prev);
+  };
+
   const navItems = (
     <>
+      {["Portfolio", "About Me", "Skills", "Projects", "Contact"].map(
+        (item) => (
+          <li key={item}>
+            <ScrollLink
+              to={item.toLowerCase().replace(" ", "")}
+              smooth={true}
+              duration={500}
+              offset={-70}
+              className="cursor-pointer hover:text-lime-400 transition duration-300"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              {item}
+            </ScrollLink>
+          </li>
+        )
+      )}
       <li>
-        <ScrollLink to="#" smooth={true} duration={1000}>
-          Home
-        </ScrollLink>
-      </li>
-      <li>
-        <ScrollLink to="portfolio" smooth={true} duration={1000}>
-          Portfolio
-        </ScrollLink>
-      </li>
-      <li>
-        <ScrollLink to="aboutMe" smooth={true} duration={1000}>
-          About Me
-        </ScrollLink>
-      </li>
-      <li>
-        <ScrollLink to="skills" smooth={true} duration={1000}>
-          Skills
-        </ScrollLink>
-      </li>
-      <li>
-        <ScrollLink to="projects" smooth={true} duration={1000}>
-          Project
-        </ScrollLink>
-      </li>
-      <li>
-        <ScrollLink to="contact" smooth={true} duration={1000}>
-          Contact
-        </ScrollLink>
-      </li>
-      <li>
-        <a className="relative inline-flex items-center justify-start px-6 py-3 overflow-hidden font-medium transition-all rounded hover:bg-white group">
-          <span className="w-48 h-48 rounded rotate-[-40deg] bg-lime-600 absolute bottom-0 left-0 -translate-x-full ease-out duration-1000 transition-all translate-y-full mb-9 ml-9 group-hover:ml-0 group-hover:mb-32 group-hover:translate-x-0"></span>
-          <span className="flex items-center gap-2 justify-center relative w-full text-left text-white transition-colors duration-1000 ease-in-out group-hover:text-hidden group-hover:text-white">
-            Download Resume{" "}
-            <span className="absolute inset-0 flex items-center justify-center w-full h-full duration-700 -translate-x-full group-hover:translate-x-0 ease">
-              <FaDownload/>
-            </span>
+        <a
+          href={pdf}
+          download
+          className="relative inline-flex items-center justify-start px-4 py-2 overflow-hidden font-medium transition-all rounded-md bg-lime-600 hover:bg-white group"
+        >
+          <span className="absolute inset-0 flex items-center justify-center w-full h-full text-white transition-transform duration-700 -translate-x-full group-hover:translate-x-0 ease">
+            <FaDownload />
+          </span>
+          <span className="relative text-white group-hover:text-lime-600 transition-colors duration-300">
+            Resume
           </span>
         </a>
       </li>
@@ -52,33 +57,49 @@ const Header = () => {
   );
 
   return (
-    <div className="">
-      <div className="navbar">
-        <div className="navbar-start">
-          <Link>
-            <h2 className="font-[Cinzel] text-6xl text-lime-400 underline">
-              M
-            </h2>
-          </Link>
-        </div>
-        <div className="navbar-end hidden lg:flex">
-          <ul className="menu menu-horizontal text-white px-1 text-lg font-[cinzel]">
-            {navItems}
-          </ul>
-        </div>
-        <div className="dropdown">
-          <label tabIndex={0} className="btn btn-ghost lg:hidden">
-            <AiOutlineMenu className="text-white ml-36" />
-          </label>
-          <ul
-            tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 border shadow-2xl text-white card ease-in bg-blue-500 rounded-box w-52"
+    <header className="bg-gradient-to-r from-[#031b2c] via-[#030d50] to-[#022944] px-4 py-5 sticky top-0 z-50 shadow-md">
+      <div className="container mx-auto flex items-center justify-between">
+        <Link to='/'>
+          <h1 className="text-4xl font-[Cinzel] text-lime-400 underline">M</h1>
+        </Link>
+
+        <div className="hidden lg:flex items-center gap-8 text-white text-lg font-[Cinzel]">
+          <ul className="flex space-x-6">{navItems}</ul>
+          <button
+            onClick={toggleDarkMode}
+            className="text-white hover:text-lime-400 transition"
+            title="Toggle theme"
           >
-            <p>{navItems}</p>
-          </ul>
+            <AiOutlineBulb size={24} />
+          </button>
+        </div>
+
+        {/* Mobile Toggle */}
+        <div className="lg:hidden flex items-center space-x-4">
+          <button
+            onClick={toggleDarkMode}
+            className="text-white hover:text-lime-400 transition"
+            title="Toggle theme"
+          >
+            <AiOutlineBulb size={24} />
+          </button>
+          <button onClick={toggleMenu}>
+            {isMenuOpen ? (
+              <AiOutlineClose size={26} className="text-white" />
+            ) : (
+              <AiOutlineMenu size={26} className="text-white" />
+            )}
+          </button>
         </div>
       </div>
-    </div>
+
+      {/* Mobile Menu */}
+      {isMenuOpen && (
+        <ul className="lg:hidden mt-4 flex flex-col space-y-4 items-center text-white text-lg font-[Cinzel] bg-[#070c2e] p-6 rounded-lg shadow-xl">
+          {navItems}
+        </ul>
+      )}
+    </header>
   );
 };
 

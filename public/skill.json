@@ -12,7 +12,23 @@
       "image": "https://i.ibb.co/8NxhJpH/java-script.png"
     },
     {
+      "name": "TypeScript",
+      "image": "https://i.ibb.co/8NxhJpH/java-script.png"
+    },
+    {
       "name": "React.js",
+      "image": "https://i.ibb.co/SchRp0K/react.png"
+    },
+    {
+      "name": "Next.js",
+      "image": "https://i.ibb.co/SchRp0K/react.png"
+    },
+    {
+      "name": "React Native",
+      "image": "https://i.ibb.co/SchRp0K/react.png"
+    },
+    {
+      "name": "Redux",
       "image": "https://i.ibb.co/SchRp0K/react.png"
     },
     {
@@ -29,6 +45,10 @@
     },
     {
       "name": "MongoDB",
+      "image": "https://i.ibb.co/nCcn31r/mongodb.png"
+    },
+    {
+      "name": "Mongoose",
       "image": "https://i.ibb.co/nCcn31r/mongodb.png"
     }
   ]

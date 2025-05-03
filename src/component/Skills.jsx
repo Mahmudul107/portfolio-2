@@ -17,31 +17,40 @@ const Skills = () => {
   }, []);
 
   const getRandomAnimation = () => {
-    const animations = ['fade','fade-right', 'zoom-in', 'zoom-in-up', 'fade-left', 'flip-left', 'slide-up', 'fade-up',];
+    const animations = ['fade', 'fade-right', 'zoom-in', 'zoom-in-up', 'fade-left', 'flip-left', 'slide-up', 'fade-up'];
     const randomIndex = Math.floor(Math.random() * animations.length);
     return animations[randomIndex];
   };
 
   return (
-    <div className="my-40" id='skills'>
-      <div className="border-b-2 border-dashed border-gray-600 my-4 w-96 mx-auto"></div>
-      <h2 className="text-lime-500 text-center sm:text-2xl lg:text-6xl md:text-6xl font-semibold font-[cinzel]">
+    <div className="my-40" id="skills">
+      {/* Divider line */}
+      <div className="border-b-2 border-dashed border-[#06b6d4] my-4 w-96 mx-auto"></div>
+      <h2 className="text-[#84cc16] text-center sm:text-2xl lg:text-6xl md:text-6xl font-semibold font-[cinzel]">
         <i>Skills</i>
       </h2>
-      <div className="border-b-2 border-dashed border-gray-600 my-4 w-96 mx-auto mb-16"></div>
-      <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 justify-center items-center px-1">
+      <div className="border-b-2 border-dashed border-[#06b6d4] my-4 w-96 mx-auto mb-16"></div>
+
+      {/* Grid layout for skills */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 mt-10 justify-center items-center px-36">
         {skills.map((skill, index) => (
           <div
             key={index}
-            className="relative p-4 rounded shadow-xl shadow-lime-200 hover:shadow-lg w-40 h-40 text-center mt-20 mx-auto"
+            className="relative p-4 rounded-lg bg-[#0f172a] shadow-xl shadow-[#84cc16] hover:shadow-lg text-center transition-all duration-300 ease-in-out transform hover:scale-105"
             data-aos={getRandomAnimation()}
             data-aos-duration="1000"
           >
-            <img src={skill.image} alt={skill.name} className="mt-2" />
-            <h2 className="text-lg font-[cinzel] text-white mt-4 font-semibold">{skill.name}</h2>
-            <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 hover:opacity-100 rounded-full hover:scale-90 transition-transform hover:translate-x-4 duration-1000">
-              <p className="text-white text-sm">{skill.name}</p>
+            {/* Skill Image */}
+            <div className="h-14 flex justify-center items-center mb-4">
+              <img
+                src={skill.image}
+                alt={skill.name}
+                className="w-14 h-14 object-cover rounded-full border-4 border-[#84cc16] transition-all duration-300 ease-in-out"
+              />
             </div>
+
+            {/* Skill Name */}
+            <h2 className="text-lg font-[cinzel] text-[#e2e8f0] mt-4 font-semibold">{skill.name}</h2>
           </div>
         ))}
       </div>

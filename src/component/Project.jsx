@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { useNavigate } from "react-router-dom";
 
 const Project = () => {
   const [projects, setProjects] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("project.json")
+    fetch("/project.json")
       .then((response) => response.json())
       .then((data) => setProjects(data))
       .catch((error) => console.error("Error fetching projects:", error));
@@ -18,59 +20,55 @@ const Project = () => {
   }, []);
 
   return (
-    <div id="projects" className="px-4 sm:px-6 lg:px-20">
+    <div id="projects" className="px-4 sm:px-6 lg:px-20 text-[#e2e8f0]">
       <div className="border-b-2 border-dashed border-gray-600 my-4 w-96 mx-auto"></div>
       <h2 className="text-lime-500 text-center text-2xl lg:text-6xl font-semibold font-cinzel">
         <i>My Projects</i>
       </h2>
-      <div className="border-b-2 border-dashed border-gray-600 my-4 w-96 mx-auto mb-32"></div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-10 lg:gap-6 overflow-hidden">
+      <div className="border-b-2 border-dashed border-gray-600 my-4 w-96 mx-auto mb-20"></div>
+
+      <div className="grid grid-cols-1 gap-10 lg:gap-12">
         {projects.map((project, index) => (
           <div
-            key={project.name}
-            className="rounded-2xl p-4 flex flex-col items-center justify-center shadow-2xl hover:overflow-auto border border-sky-700"
+            key={project.id}
+            className="flex flex-col lg:flex-row bg-[#1e293b] rounded-2xl shadow-md border border-[#06b6d4]/30 overflow-hidden transition hover:shadow-lg hover:-translate-y-1 duration-300"
             data-aos="fade-up"
             data-aos-delay={index * 100}
           >
-            <figure className="h-48 sm:h-56 md:h-64 overflow-hidden rounded-md">
+            {/* Image */}
+            <figure className="lg:w-1/2 w-full max-h-64 overflow-hidden">
               <img
-                src={project.img}
+                src={project.auto_img}
                 alt={project.name}
-                className="w-full object-cover transition-transform duration-[10000ms] hover:-translate-y-1/2"
+                className="w-[2000px] h-[3000px]  transition-transform duration-[7000ms] hover:-translate-y-1/3"
               />
             </figure>
-            <h2 className="text-lime-400 font-semibold mt-6 text-lg sm:text-xl lg:text-2xl font-sans">
-              {project.name}
-            </h2>
-            <div className="border-b-2 border border-gray-400 my-4 -mb-4 mt-10 w-80 mx-auto"></div>
-            <div className="flex gap-5 mt-8 text-white font-[cinzel text-xl]">
-              <a
-                href={project.serverLink}
-                className="relative inline-flex items-center justify-start px-6 py-2 overflow-hidden font-medium transition-all rounded hover:bg-white group"
-              >
-                <span className="w-48 h-48 rounded rotate-[-40deg] bg-lime-600 absolute bottom-0 left-0 -translate-x-full ease-out duration-500 transition-all translate-y-full mb-9 ml-9 group-hover:ml-0 group-hover:mb-32 group-hover:translate-x-0"></span>
-                <span className="relative w-full text-white text-center transition-colors duration-300 ease-in-out group-hover:text-white">
-                  Client Side
-                </span>
-              </a>
-              <a
-                href={project.clientLink}
-                className="relative inline-flex items-center justify-start px-6 py-2 overflow-hidden font-medium transition-all rounded hover:bg-white group"
-              >
-                <span className="w-48 h-48 rounded rotate-[-40deg] bg-lime-600 absolute bottom-0 left-0 -translate-x-full ease-out duration-500 transition-all translate-y-full mb-9 ml-9 group-hover:ml-0 group-hover:mb-32 group-hover:translate-x-0"></span>
-                <span className="relative w-full text-white text-center transition-colors duration-300 ease-in-out group-hover:text-white">
-                  Server
-                </span>
-              </a>
-              <a
-                href={project.liveDemo}
-                className="relative inline-flex items-center justify-start px-6 py-2 overflow-hidden font-medium transition-all  rounded hover:bg-white group"
-              >
-                <span className="w-48 h-48 rounded rotate-[-40deg] bg-lime-600 absolute bottom-0 left-0 -translate-x-full ease-out duration-500 transition-all translate-y-full mb-9 ml-9 group-hover:ml-0 group-hover:mb-32 group-hover:translate-x-0"></span>
-                <span className="relative w-full text-white text-center transition-colors duration-300 ease-in-out group-hover:text-white">
+
+            {/* Content */}
+            <div className="p-6 flex flex-col justify-center lg:w-1/2 w-full">
+              <h2 className="text-2xl font-semibold text-[#84cc16] font-cinzel mb-2">
+                {project.name}
+              </h2>
+              <h2 className="text-xl font-semibold text-gray-300 font-cinzel mb-2">
+                {project.title}
+              </h2>
+
+              <div className="flex flex-wrap gap-3 mt-4">
+                <a
+                  href={project.liveDemo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-4 py-1.5 rounded-md border border-[#84cc16] text-[#e2e8f0] hover:bg-[#84cc16]/20 transition text-sm"
+                >
                   Demo
-                </span>
-              </a>
+                </a>
+                <button
+                  onClick={() => navigate(`/project/${project.id}`)}
+                  className="px-4 py-1.5 rounded-md border border-[#84cc16] text-[#e2e8f0] hover:bg-[#84cc16]/20 transition text-sm"
+                >
+                  Details
+                </button>
+              </div>
             </div>
           </div>
         ))}

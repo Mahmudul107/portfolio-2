@@ -1,115 +1,134 @@
-import React, { useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
-import Lottie from "lottie-react";
-import contact from "../assets/contact.json";
-import "aos/dist/aos.css";
-import AOS from "aos";
-import emailjs from '@emailjs/browser';
+import React from "react";
+import { Send, MessageCircle, Briefcase, Coffee, Users } from "lucide-react";
 
-const Contact = () => {
-  const form = useRef();
-
+const ContactSection = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
-    
-    emailjs.sendForm('service_u1njk1p', 'template_4mi9ydl', form.current, 'Hhfb-9GapSsgUF_YA')
-      .then((result) => {
-        console.log(result.text);
-        form.current.reset(); // Reset form fields
-      }, (error) => {
-        console.log(error.text);
-      });
+    // Handle form submission here
   };
 
-  useEffect(() => {
-    AOS.init();
-  }, []);
-
   return (
-    <div className="mx-auto px-4 sm:px-8 md:px-12 lg:px-16 mt-36" id="contact">
-      <div className="border-b-2 border-dashed border-gray-600 my-4 w-40 sm:w-96 mx-auto"></div>
-      <figure className="h-40">
-        <Lottie
-          animationData={contact}
-          style={{ height: "80%", width: "100%" }}
-        />
-      </figure>
-      <div className="border-b-2 border-dashed border-gray-600 my-4 w-40 sm:w-96 -mt-4 mb-8 mx-auto"></div>
-      <form
-        ref={form}
-        onSubmit={handleSubmit}
-        data-aos="zoom-in-left"
-        data-aos-duration="1000"
-      >
-        <div className="flex gap-3">
-          <div className="mb-4 w-2/4">
-            <label
-              htmlFor="name"
-              className="block font-medium text-gray-300 mb-3 text-xl"
-            >
-              Name
-            </label>
-            <input
-              type="text"
-              name="from_name"
-              className="w-full px-4 py-2 border bg-slate-300 text-white text-lg shadow-lg shadow-sky-400 rounded focus:outline-none focus:border-lime-500"
-              required
-            />
+    <section className="py-20 px-4 text-[#e2e8f0]">
+      <div className="max-w-6xl mx-auto">
+        {/* Heading */}
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-extrabold text-[#84cc16]">
+            Let’s Connect
+          </h2>
+          <p className="text-gray-400 mt-4 max-w-xl mx-auto">
+            Whether it’s a freelance project, collaboration, or just a hello — I’d love to hear from you.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-10">
+          {/* Why Reach Out - Card */}
+          <div className=" shadow-lg rounded-2xl p-6 space-y-6">
+            <h3 className="text-xl font-semibold text-[#84cc16]">Why Reach Out?</h3>
+
+            <div className="flex items-start gap-3">
+              <Briefcase className="h-5 w-5 text-[#06b6d4] mt-1" />
+              <div>
+                <p className="font-semibold">Freelance Projects</p>
+                <p className="text-sm text-gray-400">
+                  Need a MERN/React developer? Let's create something impactful.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-3">
+              <Users className="h-5 w-5 text-[#06b6d4] mt-1" />
+              <div>
+                <p className="font-semibold">Team Collaborations</p>
+                <p className="text-sm text-gray-400">
+                  Passionate about building something together? Let’s talk teamwork.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-3">
+              <MessageCircle className="h-5 w-5 text-[#06b6d4] mt-1" />
+              <div>
+                <p className="font-semibold">Tech Conversations</p>
+                <p className="text-sm text-gray-400">
+                  Love chatting React, TypeScript, or dev life? I’m all ears.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-3">
+              <Coffee className="h-5 w-5 text-[#06b6d4] mt-1" />
+              <div>
+                <p className="font-semibold">Just Say Hi</p>
+                <p className="text-sm text-gray-400">
+                  Even a casual hello is welcome — I enjoy meeting new minds.
+                </p>
+              </div>
+            </div>
           </div>
-          <div className="mb-4 w-2/4">
-            <label
-              htmlFor="email"
-              className="block font-medium text-gray-300 mb-3 text-xl"
-            >
-              Email
-            </label>
-            <input
-              type="text"
-              name="from_email"
-              className="w-full px-4 py-2 border bg-slate-300 text-white text-lg shadow-lg shadow-sky-400 rounded focus:outline-none focus:border-lime-500"
-              required
-            />
+
+          {/* Contact Form - Card */}
+          <div className=" shadow-lg rounded-2xl p-6">
+            <h3 className="text-xl font-semibold text-[#84cc16] mb-6">Send a Message</h3>
+            <form onSubmit={handleSubmit} className="space-y-5">
+              <div>
+                <label htmlFor="name" className="block text-sm text-gray-300 mb-1">Name</label>
+                <input
+                  id="name"
+                  name="name"
+                  required
+                  placeholder="Your name"
+                  className="w-full bg-[#0f172a] text-white border border-gray-600 rounded-lg px-4 py-2 focus:ring-2 focus:ring-[#84cc16] outline-none"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="email" className="block text-sm text-gray-300 mb-1">Email</label>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  required
+                  placeholder="you@example.com"
+                  className="w-full bg-[#0f172a] text-white border border-gray-600 rounded-lg px-4 py-2 focus:ring-2 focus:ring-[#84cc16] outline-none"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="subject" className="block text-sm text-gray-300 mb-1">Subject</label>
+                <input
+                  id="subject"
+                  name="subject"
+                  required
+                  placeholder="Let me know how I can help"
+                  className="w-full bg-[#0f172a] text-white border border-gray-600 rounded-lg px-4 py-2 focus:ring-2 focus:ring-[#84cc16] outline-none"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="message" className="block text-sm text-gray-300 mb-1">Message</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  required
+                  rows={5}
+                  placeholder="Your message..."
+                  className="w-full bg-[#0f172a] text-white border border-gray-600 rounded-lg px-4 py-2 focus:ring-2 focus:ring-[#84cc16] outline-none"
+                />
+              </div>
+
+              <button
+                type="submit"
+                className="w-full bg-[#84cc16] hover:bg-lime-500 text-[#0f172a] font-semibold py-2 rounded-lg flex items-center justify-center transition"
+              >
+                <Send className="h-4 w-4 mr-2" />
+                Send Message
+              </button>
+            </form>
           </div>
         </div>
-        <div className="mb-4">
-          <label
-            htmlFor="email"
-            className="block font-medium text-gray-300 mb-3 text-xl"
-          >
-            Subject
-          </label>
-          <input
-            type="text"
-            name="from_subject"
-            className="w-full px-4 py-2 border bg-slate-300 text-white text-lg shadow-lg shadow-sky-400 rounded focus:outline-none focus:border-lime-500"
-            required
-          />
-        </div>
-        <div className="mb-4">
-          <label
-            htmlFor="message"
-            className="block font-medium text-gray-300 mb-3 text-xl"
-          >
-            Message
-          </label>
-          <textarea
-            name="message"
-            className="w-full px-4 py-2 border bg-slate-300 text-white text-lg shadow-lg shadow-lime-200 rounded focus:outline-none focus:border-lime-500"
-            rows="5"
-            required
-          ></textarea>
-        </div>
-        <button type="submit" value="Send">
-          <Link className="relative shadow-lg shadow-lime-100 inline-flex items-center justify-start px-6 py-3 overflow-hidden font-medium transition-all bg-white rounded hover:bg-white group">
-            <span className="w-48 h-48 rounded rotate-[-40deg] bg-lime-600 absolute bottom-0 left-0 -translate-x-full ease-out duration-500 transition-all translate-y-full mb-9 ml-9 group-hover:ml-0 group-hover:mb-32 group-hover:translate-x-0"></span>
-            <span className="relative w-full text-black text-center transition-colors duration-300 ease-in-out group-hover:text-white">
-              Submit Now
-            </span>
-          </Link>
-        </button>
-      </form>
-    </div>
+      </div>
+    </section>
   );
 };
 
-export default Contact;
+export default ContactSection;
