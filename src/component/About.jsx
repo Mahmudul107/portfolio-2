@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import Lottie from "lottie-react";
 import coding from "../assets/coding.json";
-import { Link } from "react-router-dom";
 import { FaDownload } from "react-icons/fa";
 import pdf from "../../public/MERN Stack Developer.pdf";
 import "aos/dist/aos.css";
